@@ -25,6 +25,9 @@
             /*border: 1px solid #fff;*/
             cursor: pointer;
         }
+        .body_cell {
+            border-bottom: 1px solid #999;
+        }
         .body_cell:hover {
             background: #ddd;
             color: #fff;
@@ -135,10 +138,7 @@
 <script>
     new Calender({
         el: '#calender',
-        lang: 'cn',
-        cellClick: function (date) {
-            console.log(date);
-        }
+        lang: 'en',
     });
 </script>
 </html>

@@ -280,12 +280,12 @@ function Calender(config) {
 
         year = createElem('input', {
             attrs: {className: 'year', name: 'year'},
-            events: {change: changeInput},
+            // events: {change: changeInput},
         });
 
         month = createElem('input', {
             attrs: {className: 'month', name: 'month'},
-            events: {change: changeInput},
+            // events: {change: changeInput},
         });
 
         let input_container = createElem('div', {attrs: {className: 'input-container'}}, [year, month]);
