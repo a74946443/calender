@@ -18,6 +18,9 @@ function Calender(config) {
         today = null,
         me = this;
 
+    //todo 可直接设置已选中的日期列表；
+    //todo 节日。
+    //todo 集成样式？
     let currentPageDate = config['date'] || new Date();
     let elem = config['el'];
     let head = config['lang'] === 'cn' ? head_cn : head_en;
@@ -59,6 +62,8 @@ function Calender(config) {
     let changeInput = function (e) {
         e.stopPropagation();
         e.preventDefault();
+
+        //todo 输入校验
         setDate(year.value, month.value - 1);
         renderData();
     };
@@ -69,6 +74,7 @@ function Calender(config) {
      */
     let cellClick = function (e) {
         let date = e.target._date;
+        //todo 可多选日期；
         clickDay = clickDay ? (dateCompare(date.date, clickDay) ? null : date.date) : date.date;
         if (date.date.getMonth() !== currentPageDate.getMonth()) {
             setDate(date.date.getFullYear(), date.date.getMonth());
@@ -367,4 +373,8 @@ function Calender(config) {
 
     // 渲染数据；
     renderData();
+
+    // todo 异常处理
+
+    // todo 日历生命周期事件接口暴露。 文档结构生成前，生成后，（渲染数据前，）数据渲染中，生成后，
 }
